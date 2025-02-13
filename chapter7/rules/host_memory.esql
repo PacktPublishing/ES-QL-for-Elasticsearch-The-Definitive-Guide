@@ -1,0 +1,3 @@
+FROM metrics-system.memory-*
+| STATS AVG(system.memory.used.pct) BY host.name
+| WHERE `AVG(system.memory.used.pct)` > 0.8
