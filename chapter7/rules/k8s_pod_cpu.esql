@@ -1,0 +1,3 @@
+FROM metrics-kubernetes.pod-*
+| STATS AVG(kubernetes.pod.cpu.usage.node.pct) BY kubernetes.pod.name
+| WHERE `AVG(kubernetes.pod.cpu.usage.node.pct)` > 0.8

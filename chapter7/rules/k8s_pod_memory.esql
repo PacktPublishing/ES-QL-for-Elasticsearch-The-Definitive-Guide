@@ -1,0 +1,3 @@
+FROM metrics-kubernetes.pod-*
+| STATS AVG(kubernetes.pod.memory.usage.limit.pct) BY kubernetes.pod.name
+| WHERE `AVG(kubernetes.pod.memory.usage.limit.pct)` > 0.8

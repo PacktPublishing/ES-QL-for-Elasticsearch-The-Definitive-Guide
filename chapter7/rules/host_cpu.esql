@@ -1,0 +1,3 @@
+FROM metrics-system.cpu-*
+| STATS AVG(host.cpu.usage) BY host.name
+| WHERE `AVG(host.cpu.usage)` > 0.8
